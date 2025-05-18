@@ -1,0 +1,105 @@
+
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<div class="specific-fields" th:fragment="specificFields">
+
+    <h2>Informações</h2>
+    <div class="grid">
+        <div class="field">
+            <label for="tipoEvento">Tipo de Evento*</label>
+            <select id="tipoEvento" name="tipoEvento" required>
+                <option value="">Selecione</option>
+                <option value="Seminario">Seminário</option>
+                <option value="Workshop">Workshop</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label for="publicoAlvo">Público Alvo</label>
+            <input type="text" id="publicoAlvo" name="publicoAlvo">
+        </div>
+
+        <div class="field">
+            <label for="numParticipantes">Número Estimado de Participantes</label>
+            <input type="number" id="numParticipantes" name="numParticipantes">
+        </div>
+
+        <div class="field">
+            <label for="organizadores">Organizadores</label>
+            <input type="text" id="organizadores" name="organizadores">
+        </div>
+
+        <div class="field">
+            <label for="palestrantes">Palestrantes / Facilitadores</label>
+            <input type="text" id="palestrantes" name="palestrantes">
+        </div>
+
+        <div class="field">
+            <label for="materialDivulgacao">Material para Divulgação</label>
+            <input type="text" id="materialDivulgacao" name="materialDivulgacao">
+        </div>
+
+        <div class="field">
+            <label for="taxaInscricao">Taxa de Inscrição</label>
+            <input type="text" id="taxaInscricao" name="taxaInscricao">
+        </div>
+
+        <div class="field">
+            <label for="vagasDisponiveis">Vagas Disponíveis</label>
+            <input type="number" id="vagasDisponiveis" name="vagasDisponiveis">
+        </div>
+
+        <div class="field">
+            <label for="credenciamento">Necessidade de Credenciamento</label>
+            <select id="credenciamento" name="credenciamento">
+                <option value="Sim">Sim</option>
+                <option value="Não">Não</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label for="certificados">Emissão de Certificados</label>
+            <select id="certificados" name="certificados">
+                <option value="Sim">Sim</option>
+                <option value="Não">Não</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label for="projetoVinculado">Projeto Vinculado</label>
+            <input type="text" id="projetoVinculado" name="projetoVinculado">
+        </div>
+
+    </div>
+    <hr class="separator"/>
+    <h2>Orçamento</h2>
+    <div class="orcamento-section grid">
+
+        <div class="field">
+            <label for="valorEstimado">Valor Total Estimado</label>
+            <input type="text" id="valorEstimado" name="valorEstimado">
+        </div>
+
+        <div class="field">
+            <label for="detalhesOrcamento">Detalhes do Orçamento</label>
+            <textarea id="detalhesOrcamento" name="detalhesOrcamento"></textarea>
+        </div>
+
+        <div class="field">
+            <label for="orcamentosAnexados">Orçamentos Anexados</label>
+            <input type="file" id="orcamentosAnexados" name="orcamentosAnexados" multiple>
+        </div>
+
+        <div class="field">
+            <label for="infoAdicionalOrcamento">Informações Adicionais sobre o Orçamento</label>
+            <textarea id="infoAdicionalOrcamento" name="infoAdicionalOrcamento"></textarea>
+        </div>
+
+
+    </div>
+    <div class="orcamento-footer">
+        <!-- campos informativos no rodapé, fora do grid principal -->
+        <p>Data de Criação: XX/XX/XXXX</p>
+        <p>Última Modificação: XX/XX/XXXX</p>
+        <p>Data da Solicitação de Orçamento: XX/XX/XXXX</p>
+    </div>
+</div>

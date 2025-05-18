@@ -1,0 +1,31 @@
+<!-- src/main/resources/templates/fragments/sidebar.html -->
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<aside class="sidebar" th:fragment="sidebar">
+    <nav class="nav">
+        <a class="nav-link" href="/home"><img th:src="@{/images/Home.png}">Início</a>
+        <a class="nav-link" href="#"><img th:src="@{images/Bookmark.png}"> Eventos</a>
+        <a class="nav-link" href="#"><img th:src="@{images/Synchronize.png}"> Monitorias</a>
+        <div class="nav-section">Professor</div>
+        <a class="nav-link active" href="#"><img th:src="@{images/Synchronize.png}"> Cadastros</a>
+        <a class="nav-link" href="#"><img th:src="@{images/Synchronize.png}"> Aprovações</a>
+        <a class="nav-link" href="#"><img th:src="@{images/Synchronize.png}"> Relatórios</a>
+
+    </nav>
+    <div class="user">
+        <!-- a fazer: subistituir a imagem pela foto de perfil do usuario logado-->
+
+        <div id="divIconePerfil">
+            <img th:src="@{images/user.png}" class="iconePerfil">
+
+            <p th:if="${usuarioLogado != null}">
+                <span th:text="${usuarioLogado.nome}">Nome</span><br>
+                <span th:text="${usuarioLogado.email}">email@exemplo.com</span>
+            </p>
+
+            <p th:if="${usuarioLogado == null}">
+                Visitante<br><span>sem login</span>
+            </p>
+
+        </div>
+    </div>
+</aside>

@@ -1,0 +1,136 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<div class="specific-fields" th:fragment="specificFields">
+    <h2>Identificação</h2>
+    <div class="grid">
+        <div class="field">
+            <label for="codigoProjeto">Código do Projeto</label>
+            <input type="text" id="codigoProjeto" name="codigoProjeto">
+        </div>
+
+        <div class="field">
+            <label for="areaConhecimento">Área do Conhecimento</label>
+            <select id="areaConhecimento" name="areaConhecimento">
+                <option value="">Selecionar</option>
+                <!-- opções dinâmicas -->
+            </select>
+        </div>
+
+        <div class="field">
+            <label for="tematicaPrincipal">Área Temática Principal*</label>
+            <input type="text" id="tematicaPrincipal" name="tematicaPrincipal" required>
+        </div>
+
+        <div class="field">
+            <label for="tematicaSecundaria">Áreas Temáticas Secundárias</label>
+            <input type="text" id="tematicaSecundaria" name="tematicaSecundaria">
+        </div>
+
+        <div class="field">
+            <label for="justificativa">Justificativa*</label>
+            <input type="text" id="justificativa" name="justificativa" required>
+        </div>
+
+        <div class="field">
+            <label for="objetivoGeral">Objetivo Geral*</label>
+            <input type="text" id="objetivoGeral" name="objetivoGeral" required>
+        </div>
+
+        <div class="field">
+            <label for="objetivosEspecificos">Objetivos Específicos*</label>
+            <input type="text" id="objetivosEspecificos" name="objetivosEspecificos" required>
+        </div>
+
+        <div class="field">
+            <label for="publicoAlvo">Público Alvo*</label>
+            <input type="text" id="publicoAlvo" name="publicoAlvo" required>
+        </div>
+
+        <div class="field">
+            <label for="estimativaBeneficiados">Número Estimado de Beneficiados</label>
+            <input type="number" id="estimativaBeneficiados" name="estimativaBeneficiados">
+        </div>
+
+        <div class="field">
+            <label for="cargaHorariaTotal">Carga Horária Total do Projeto (Estimativa)</label>
+            <input type="text" id="cargaHorariaTotal" name="cargaHorariaTotal">
+        </div>
+    </div>
+
+    <h2>Membros</h2>
+    <div class="grid">
+        <div class="field">
+            <label for="membroEquipe">Membros da Equipe (RA)</label>
+            <input type="text" id="membroEquipe" name="membroEquipe">
+        </div>
+
+        <div class="field">
+            <label for="cursoMembro">Curso do Membro</label>
+            <input type="text" id="cursoMembro" name="cursoMembro">
+        </div>
+
+        <div class="field">
+            <label for="parceiroInstitucional">Parceiros Institucionais</label>
+            <input type="text" id="parceiroInstitucional" name="parceiroInstitucional">
+        </div>
+
+        <div class="field">
+            <label for="cursoParceiro">Curso do Parceiro</label>
+            <input type="text" id="cursoParceiro" name="cursoParceiro">
+        </div>
+    </div>
+
+    <h2>Avaliação e Financiamento</h2>
+    <div class="grid">
+        <div class="field">
+            <label for="formaAvaliacao">Forma de Avaliação</label>
+            <input type="text" id="formaAvaliacao" name="formaAvaliacao">
+        </div>
+
+        <div class="field">
+            <label for="indicadoresAvaliacao">Indicadores de Avaliação</label>
+            <input type="text" id="indicadoresAvaliacao" name="indicadoresAvaliacao">
+        </div>
+
+        <div class="field">
+            <label for="edital">Edital de Financiamento</label>
+            <input type="text" id="edital" name="edital">
+        </div>
+
+        <div class="field">
+            <label for="numeroProcesso">Número de Processo Institucional</label>
+            <input type="text" id="numeroProcesso" name="numeroProcesso">
+        </div>
+    </div>
+
+    <h2>Orçamento</h2>
+    <div class="grid">
+        <div class="field">
+            <label for="possuiOrcamento">Haverá Orçamento?</label>
+            <select id="possuiOrcamento" name="possuiOrcamento">
+                <option value="">Selecionar</option>
+                <option value="Sim">Sim</option>
+                <option value="Não">Não</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label for="valorEstimado">Valor Total Estimado</label>
+            <input type="text" id="valorEstimado" name="valorEstimado">
+        </div>
+
+        <div class="field full-width">
+            <label for="detalhesOrcamento">Detalhes do Orçamento</label>
+            <input type="text" id="detalhesOrcamento" name="detalhesOrcamento">
+        </div>
+
+        <div class="field full-width">
+            <label for="arquivosOrcamento">Orçamentos Anexados</label>
+            <input type="file" id="arquivosOrcamento" name="arquivosOrcamento" multiple>
+        </div>
+
+        <div class="field full-width">
+            <label for="informacoesAdicionais">Informações Adicionais sobre o Orçamento</label>
+            <input type="text" id="informacoesAdicionais" name="informacoesAdicionais">
+        </div>
+    </div>
+</div>

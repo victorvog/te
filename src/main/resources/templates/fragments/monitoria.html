@@ -1,0 +1,60 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<div class="specific-fields" th:fragment="specificFields">
+    <h2>Informações</h2>
+    <div class="grid">
+        <div class="field">
+            <label for="projetoVinculado">Projeto Vinculado*</label>
+            <input type="text" id="projetoVinculado" name="projetoVinculado" required>
+        </div>
+
+        <div class="field">
+            <label for="alunoMonitor">Aluno Monitor*</label>
+            <select id="alunoMonitor" name="alunoMonitor" required>
+                <option value="">Selecionar</option>
+                <!-- preencher dinamicamente -->
+            </select>
+        </div>
+
+        <div class="field">
+            <label for="professorOrientador">Professor Orientador*</label>
+            <select id="professorOrientador" name="professorOrientador" required>
+                <option value="">Selecionar</option>
+                <!-- preencher dinamicamente -->
+            </select>
+        </div>
+
+        <div class="field">
+            <label for="cargaHoraria">Carga Horária Semanal*</label>
+            <input type="text" id="cargaHoraria" name="cargaHoraria" required>
+        </div>
+
+        <div class="field">
+            <label for="bolsa">Bolsa</label>
+            <select id="bolsa" name="bolsa">
+                <option value="">Selecionar</option>
+                <option value="Sim">Sim</option>
+                <option value="Não">Não</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label for="numeroBolsa">Número da Bolsa</label>
+            <input type="text" id="numeroBolsa" name="numeroBolsa">
+        </div>
+
+        <div class="field">
+            <label for="processoSeletivo">Processo Seletivo</label>
+            <input type="text" id="processoSeletivo" name="processoSeletivo">
+        </div>
+
+        <div class="field">
+            <label for="requisitosMonitoria">Requisitos para a Monitoria</label>
+            <input type="text" id="requisitosMonitoria" name="requisitosMonitoria">
+        </div>
+
+        <div class="field full-width">
+            <label for="planoTrabalho">Plano de Trabalho</label>
+            <input type="file" id="planoTrabalho" name="planoTrabalho" multiple>
+        </div>
+    </div>
+</div>

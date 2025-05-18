@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cepex - Início</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex">
+
+<!-- Sidebar -->
+<div th:replace="fragments/sidebar2.html :: sidebar2"></div>
+
+<!-- Conteúdo principal -->
+<div class="flex-1 p-8">
+
+    <!-- Saudação -->
+    <h1 class="text-2xl font-semibold mb-4">
+        Bem-vindo(a),
+        <span th:text="${usuarioLogado != null ? usuarioLogado.nome : 'Visitante'}">[Nome do Usuário]</span>.
+    </h1>
+
+    <!-- Estatísticas -->
+    <div class="grid grid-cols-4 gap-4 mb-6">
+        <div class="bg-white rounded-lg shadow p-4 text-center">
+            <p class="text-gray-700">Projetos em Aberto</p>
+            <p class="text-blue-600 font-bold text-xl">3</p>
+        </div>
+        <div class="bg-white rounded-lg shadow p-4 text-center">
+            <p class="text-gray-700">Aguardando Aprovação</p>
+            <p class="text-yellow-600 font-bold text-xl">2</p>
+        </div>
+        <div class="bg-white rounded-lg shadow p-4 text-center">
+            <p class="text-gray-700">Monitorias Ativas</p>
+            <p class="text-green-600 font-bold text-xl">2</p>
+        </div>
+        <div class="bg-white rounded-lg shadow p-4 text-center">
+            <p class="text-gray-700">Inscrições Recebidas</p>
+            <p class="text-red-600 font-bold text-xl">7</p>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-6">
+        <!-- Coluna de eventos -->
+        <div>
+            <h2 class="text-lg font-semibold mb-2">Eventos</h2>
+
+            <div class="bg-white shadow rounded-lg overflow-hidden mb-4 p-4">
+                <img src="/images/evento1.jpg" alt="Evento" class="w-full rounded mb-2">
+                <h3 class="font-semibold">Congresso de Tecnologia</h3>
+                <p class="text-sm text-gray-600">Data: 12/06/2025 • Local: Auditório Central</p>
+                <p class="text-sm mt-2 text-gray-700">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                </p>
+            </div>
+
+            <!-- Adicione mais eventos se quiser -->
+        </div>
+
+        <!-- Coluna de monitorias -->
+        <div>
+            <h2 class="text-lg font-semibold mb-2">Monitorias</h2>
+
+            <div class="bg-white shadow rounded-lg overflow-hidden mb-4 p-4">
+                <img src="/images/monitoria1.jpg" alt="Monitoria" class="w-full rounded mb-2">
+                <h3 class="font-semibold">Programação Orientada a Objetos</h3>
+                <p class="text-sm text-gray-600">Monitor: Andre Augusto • Ter e Qui • 10h às 12h</p>
+                <p class="text-sm mt-2 text-gray-700">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                </p>
+            </div>
+
+            <!-- Adicione mais monitorias se quiser -->
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

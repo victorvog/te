@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Criar Conta - Cepex</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center">
+
+<div class="w-full max-w-4xl flex items-center justify-center gap-6 mb-8 px-4">
+    <!-- LOGO -->
+    <img src="/images/logo-biopark.png" alt="Logo Biopark" class="w-50 h-50 object-contain">
+
+    <div class="text-center sm:text-left">
+        <h1 class="text-3xl font-bold text-gray-3000">CEPEX</h1>
+        <p class="text-sm text-gray-1500">Coordenação de Pesquisa e Extensão</p>
+    </div>
+</div>
+
+<div class="bg-white p-8 rounded-xl shadow-md w-full max-w-sm">
+    <h2 class="text-2xl font-semibold text-gray-900 mb-6">Criar uma conta</h2>
+
+    <form method="post" action="/cadastro" th:object="${usuario}" class="space-y-4">
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Nome<span class="text-red-500">*</span></label>
+            <input type="text" th:field="*{nome}" required
+                   class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:outline-none">
+            <p class="text-red-500 text-sm mt-1" th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></p>
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">RA<span class="text-red-500">*</span></label>
+            <input type="text" th:field="*{ra}" required
+                   class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:outline-none">
+            <p class="text-red-500 text-sm mt-1" th:if="${#fields.hasErrors('ra')}" th:errors="*{ra}"></p>
+            <p class="text-red-500 text-sm mt-1" th:if="${erroRaExistente}" th:text="${erroRaExistente}"></p>
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Endereço de e-mail<span class="text-red-500">*</span></label>
+            <input type="email" th:field="*{email}" required
+                   class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:outline-none">
+            <p class="text-red-500 text-sm mt-1" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+            <p th:if="${erroEmailExistente}" th:text="${erroEmailExistente}" class="text-red-500 text-sm mt-1"></p>
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Senha<span class="text-red-500">*</span></label>
+            <input type="password" th:field="*{senha}" required
+                   class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:outline-none">
+            <p th:if="${#fields.hasErrors('senha')}" th:errors="*{senha}" class="text-red-500 text-sm mt-1"></p>
+            <p th:if="${erro}" class="text-red-500 text-sm mt-1" th:text="${erro}"></p>
+        </div>
+
+        <button type="submit"
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md">
+            Criar Conta
+        </button>
+    </form>
+
+    <p class="mt-6 text-center text-sm text-gray-600">
+        Já tem uma conta?
+        <a href="/login" class="text-blue-600 font-medium hover:underline">Entrar</a>
+    </p>
+</div>
+
+</body>
+</html>

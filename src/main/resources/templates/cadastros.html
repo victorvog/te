@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastros</title>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="stylesheet" th:href="@{/css/cadastros.css}">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+<div class="layout">
+
+    <div th:replace="fragments/sidebar2.html :: sidebar2"></div>
+
+
+
+    <!-- Conteúdo -->
+    <main class="main">
+        <h1>Cadastros</h1>
+        <form th:action="@{/cadastros}" method="post" enctype="multipart/form-data">
+            <div class="grid">
+                <div class="field">
+                    <label for="titulo">Título*</label>
+                    <input type="text" id="titulo" name="titulo" placeholder="Digite o Título" required>
+                </div>
+                <div class="field">
+                    <label for="palavras">Palavras-chave</label>
+                    <input type="text" id="palavras" name="palavras" placeholder="Digite o Título">
+                </div>
+                <div class="field">
+                    <label for="proponente">Nome do Proponente*</label>
+                    <input type="text" id="proponente" name="proponente" placeholder="Nome dos Proponentes" required>
+                </div>
+                <div class="field combo">
+                    <label for="departamento">Departamento Proponente*</label>
+                    <select id="departamento" name="departamento" required>
+                        <option value="teste">Selecionar</option>
+                        <option value="teste">teste</option>
+
+                        <option th:each="d : ${departamentos}" th:value="${d.id}" th:text="${d.nome}"></option>
+                    </select>
+                    <button type="button" class="plus">+</button>
+                </div>
+                <div class="field">
+                    <label for="classificacao">Classificação de Cadastro*</label>
+                    <select id="classificacao" name="classificacao" required>
+                        <option value="">Selecione</option>
+                        <option value="evento">Evento</option>
+                        <option value="monitoria">Monitoria</option>
+                        <option value="ppe">Projeto de Pesquisa e Extensão</option>
+
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="local">Local*</label>
+                    <input type="text" id="local" name="local" placeholder="Lorem ipsum" required>
+                </div>
+                <div class="field">
+                    <label for="descricao">Descrição*</label>
+                    <textarea id="descricao" name="descricao" placeholder="Lorem ipsum" rows="5" required></textarea>
+                </div>
+
+                <div class="field">
+                    <label for="inicio">Data de Início*</label>
+                    <input type="date" id="inicio" name="inicio" required>
+
+
+                    <label for="fim">Data de Termino*</label>
+                    <input type="date" id="fim" name="fim" required>
+                </div>
+
+
+            </div>
+
+            <hr class="separator"/>
+
+            <div id="specific-container"></div>
+
+
+
+            <div class="actions">
+                <button type="submit" class="btn disabled" disabled>Enviar para Aprovação</button>
+                <button type="submit" class="btn save">Salvar sem Enviar</button>
+            </div>
+        </form>
+    </main>
+</div>
+<script th:src="@{/js/cadastros.js}"></script>
+</body>
+</html>
